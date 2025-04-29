@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://c85t517p8tp3c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q0ede"]
+size = Vector3(0.5, 0.25, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h51qb"]
+albedo_color = Color(0.912758, 0.199167, 0.345776, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mwbor"]
+material = SubResource("StandardMaterial3D_h51qb")
+size = Vector3(0.5, 0.25, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_humdg"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="drone" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_q0ede")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_mwbor")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="drone"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.3, 1, 0.8)
+size = Vector3(0.2, 0.2, 0.6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="drone"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.3, 1, 0.8)
+size = Vector3(0.2, 0.2, 0.6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.3, 1, -0.8)
+size = Vector3(0.2, 0.2, 0.6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.3, 1, -0.8)
+size = Vector3(0.2, 0.2, 0.6)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, -1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 1.2, -1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2, -1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 1.2, -1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2, 1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 1.2, 1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="drone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="drone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 1.2, 1)
+size = Vector3(0.3, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_humdg")
