@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c85t517p8tp3c"]
+[gd_scene load_steps=7 format=3 uid="uid://c85t517p8tp3c"]
 
 [ext_resource type="Script" path="res://drone.gd" id="1_2ebjl"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_vxfuu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0ede"]
 size = Vector3(0.5, 0.25, 1.4)
@@ -87,3 +88,4 @@ material = SubResource("StandardMaterial3D_humdg")
 
 [node name="Camera3D" type="Camera3D" parent="drone"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4, 6)
+script = ExtResource("2_vxfuu")
