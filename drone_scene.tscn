@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1mt883kcp3i"]
+[gd_scene load_steps=11 format=3 uid="uid://b1mt883kcp3i"]
 
 [ext_resource type="Script" path="res://drone_scene.gd" id="1_ji2ij"]
 [ext_resource type="PackedScene" uid="uid://c85t517p8tp3c" path="res://actual_drone.tscn" id="2_h0r1e"]
@@ -25,6 +25,13 @@ size = Vector2(100, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgr37"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqg5b"]
+albedo_color = Color(0.498039, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mik5j"]
+material = SubResource("StandardMaterial3D_eqg5b")
+size = Vector3(20, 20, 20)
+
 [node name="drone_scene" type="Node3D"]
 script = ExtResource("1_ji2ij")
 drone_scene = ExtResource("2_h0r1e")
@@ -43,3 +50,13 @@ mesh = SubResource("PlaneMesh_qhlfa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_jgr37")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.85282, 28.4088)
+mesh = SubResource("BoxMesh_mik5j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4258, 9.85282, 28.4088)
+mesh = SubResource("BoxMesh_mik5j")
