@@ -6,7 +6,7 @@ extends RigidBody3D
 
 func _physics_process(delta: float) -> void:
 	var lift = Input.is_action_pressed("up") 
-	var forward = Input.get_axis("forward", "reverse") 
+	var forward = Input.get_axis("reverse", "forward") 
 	var turn = Input.get_axis("right", "left")  
 	if lift:
 		print("LIFTING")

@@ -1,19 +1,14 @@
 extends Camera3D
 
 @onready var drone = $".."
+var distance = 4 
+var lerp_speed= 5
+var offset = Vector3.ZERO
 
-#ADD LERP HERE
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var drone_forward = -drone.global_transform.basis.z
-	var target_pos = drone.global_position + (drone_forward * 4.0) + Vector3(0, 3, 0)    
-	global_position = global_position.lerp(target_pos, 5.0 * delta)
-		
-	look_at(drone.global_position)
-	#pass
+	var drone_back = drone.global_transform.basis.z.normalized()
+	var target_offset = (drone_back * distance) + Vector3(0, 3, 0)
+	offset = offset.lerp(target_offset, lerp_speed * delta)
+	global_position = drone.global_position + offset#
+	
+	look_at(drone.global_position, Vector3.UP)
