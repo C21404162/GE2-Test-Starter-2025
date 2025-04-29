@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c85t517p8tp3c"]
+[gd_scene load_steps=6 format=3 uid="uid://c85t517p8tp3c"]
+
+[ext_resource type="Script" path="res://drone.gd" id="1_2ebjl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0ede"]
 size = Vector3(0.5, 0.25, 1.4)
@@ -17,6 +19,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="drone" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_2ebjl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="drone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -28,19 +31,19 @@ mesh = SubResource("BoxMesh_mwbor")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="drone"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.3, 1, 0.8)
-size = Vector3(0.2, 0.2, 0.6)
+size = Vector3(0.15, 0.2, 0.6)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="drone"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.3, 1, 0.8)
-size = Vector3(0.2, 0.2, 0.6)
+size = Vector3(0.15, 0.2, 0.6)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="drone"]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.3, 1, -0.8)
-size = Vector3(0.2, 0.2, 0.6)
+size = Vector3(0.15, 0.2, 0.6)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="drone"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.3, 1, -0.8)
-size = Vector3(0.2, 0.2, 0.6)
+size = Vector3(0.15, 0.2, 0.6)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="drone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, -1)

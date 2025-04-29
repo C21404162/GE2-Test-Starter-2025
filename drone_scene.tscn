@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1mt883kcp3i"]
+[gd_scene load_steps=7 format=3 uid="uid://b1mt883kcp3i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jgr37"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -22,16 +22,6 @@ size = Vector2(100, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgr37"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v2f7m"]
-size = Vector3(0.5, 0.25, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h51qb"]
-albedo_color = Color(0.912758, 0.199167, 0.345776, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pbru0"]
-material = SubResource("StandardMaterial3D_h51qb")
-size = Vector3(0.5, 0.25, 1.4)
-
 [node name="drone_scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -49,30 +39,5 @@ mesh = SubResource("PlaneMesh_qhlfa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_jgr37")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_v2f7m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("BoxMesh_pbru0")
-
-[node name="Camera3D" type="Camera3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10388, 3.01379)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.3, 1, 0.8)
-size = Vector3(0.2, 0.2, 0.6)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.3, 1, 0.8)
-size = Vector3(0.2, 0.2, 0.6)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.3, 1, -0.8)
-size = Vector3(0.2, 0.2, 0.6)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.3, 1, -0.8)
-size = Vector3(0.2, 0.2, 0.6)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77018, 9.59649)
