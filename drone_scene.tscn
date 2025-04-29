@@ -25,12 +25,11 @@ size = Vector2(100, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgr37"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqg5b"]
-albedo_color = Color(0.498039, 0, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f847f"]
+albedo_color = Color(0, 0.482353, 1, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_mik5j"]
-material = SubResource("StandardMaterial3D_eqg5b")
-size = Vector3(20, 20, 20)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8gnq"]
+albedo_color = Color(0.486275, 0, 1, 1)
 
 [node name="drone_scene" type="Node3D"]
 script = ExtResource("1_ji2ij")
@@ -51,12 +50,28 @@ mesh = SubResource("PlaneMesh_qhlfa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_jgr37")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.55386, -38.2675)
+use_collision = true
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_f847f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.85282, 28.4088)
-mesh = SubResource("BoxMesh_mik5j")
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.7026, -38.2675)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = SubResource("StandardMaterial3D_f847f")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4258, 9.85282, 28.4088)
-mesh = SubResource("BoxMesh_mik5j")
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, -38)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = SubResource("StandardMaterial3D_b8gnq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 4)
+size = Vector3(3, 3, 3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 4)
+size = Vector3(3, 3, 3)
